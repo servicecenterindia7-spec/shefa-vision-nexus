@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LanguageProvider } from "../lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -77,19 +78,48 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Shefa Hospital — Trusted Healthcare in Makkah | CBAHI Accredited" },
+      { name: "description", content: "Shefa Hospital in Makkah offers 24/7 emergency care, ICU, expert specialists, laboratory, radiology and ambulance services. CBAHI accredited multispecialty hospital." },
+      { name: "author", content: "Shefa Hospital" },
+      { name: "keywords", content: "Shefa Hospital, Makkah hospital, مستشفى الشفاء, emergency care Makkah, CBAHI, specialists, ICU, ambulance, Saudi Arabia hospital" },
+      { property: "og:title", content: "Shefa Hospital — Trusted Healthcare in Makkah" },
+      { property: "og:description", content: "Comprehensive healthcare with expert specialists and 24/7 emergency services in Al Mansur, Makkah." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "ar_SA" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#083B74" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Hospital",
+          name: "Shefa Hospital",
+          alternateName: "مستشفى الشفاء",
+          url: "/",
+          telephone: "+966125333555",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Al Mansur",
+            addressLocality: "Makkah",
+            postalCode: "24232",
+            addressCountry: "SA",
+          },
+          medicalSpecialty: ["Emergency", "Cardiology", "Pediatrics", "Obstetrics", "Urology", "Orthopedics"],
+          availableService: { "@type": "EmergencyService", name: "24/7 Emergency" },
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.6", reviewCount: "761" },
+        }),
       },
     ],
   }),
@@ -118,8 +148,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LanguageProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
