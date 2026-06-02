@@ -29,7 +29,7 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full text-primary-foreground bg-primary-gradient transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full text-primary-foreground bg-primary transition-shadow duration-300 border-b border-gold/40 ${
         scrolled ? "shadow-elegant" : ""
       }`}
     >
