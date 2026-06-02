@@ -29,8 +29,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full text-primary-foreground transition-all duration-300 ${
-        scrolled ? "bg-primary/95 backdrop-blur-xl shadow-elegant" : "bg-primary/85 backdrop-blur-md"
+      className={`sticky top-0 z-50 w-full text-primary-foreground bg-primary-gradient transition-all duration-300 ${
+        scrolled ? "shadow-elegant" : ""
       }`}
     >
       <div className="hidden md:flex items-center justify-between border-b border-white/10 px-6 py-2 text-xs text-primary-foreground/80">

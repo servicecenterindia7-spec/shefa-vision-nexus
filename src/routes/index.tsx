@@ -37,10 +37,10 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-primary-gradient">
         <div className="absolute inset-0">
-          <img src={hero} alt="Shefa Hospital building" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-hero-gradient" />
+          <img src={hero} alt="Shefa Hospital building" className="h-full w-full object-cover opacity-30" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-primary-gradient opacity-80" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-36 text-white">
           <div className="max-w-3xl animate-fade-in-up">
