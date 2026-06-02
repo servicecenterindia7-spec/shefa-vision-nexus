@@ -29,23 +29,23 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-xl shadow-card-elegant" : "bg-background/60 backdrop-blur-md"
+      className={`sticky top-0 z-50 w-full text-primary-foreground transition-all duration-300 ${
+        scrolled ? "bg-primary/95 backdrop-blur-xl shadow-elegant" : "bg-primary/85 backdrop-blur-md"
       }`}
     >
-      <div className="hidden md:flex items-center justify-between border-b border-border/50 px-6 py-2 text-xs text-muted-foreground">
+      <div className="hidden md:flex items-center justify-between border-b border-white/10 px-6 py-2 text-xs text-primary-foreground/80">
         <span>{lang === "ar" ? HOSPITAL.addressAr : HOSPITAL.addressEn}</span>
-        <a href={telHref} className="flex items-center gap-2 hover:text-primary transition-colors">
+        <a href={telHref} className="flex items-center gap-2 hover:text-gold transition-colors">
           <Phone className="h-3.5 w-3.5" /> {HOSPITAL.phoneDisplay}
         </a>
       </div>
 
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Shefa Hospital" className="h-12 w-12 object-contain" width={48} height={48} />
+          <img src={logo} alt="Shefa Hospital" className="h-12 w-12 object-contain bg-white rounded-lg p-1" width={48} height={48} />
           <div className="hidden sm:block leading-tight">
-            <div className="font-display text-lg font-bold text-primary">Shefa Hospital</div>
-            <div className="text-xs text-muted-foreground" dir="rtl">مستشفى الشفاء</div>
+            <div className="font-display text-lg font-bold text-white">Shefa Hospital</div>
+            <div className="text-xs text-primary-foreground/70" dir="rtl">مستشفى الشفاء</div>
           </div>
         </Link>
 
@@ -54,8 +54,8 @@ export function Header() {
             <Link
               key={n.to}
               to={n.to}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md"
-              activeProps={{ className: "text-primary font-semibold" }}
+              className="px-3 py-2 text-sm font-medium text-primary-foreground/85 hover:text-gold transition-colors rounded-md"
+              activeProps={{ className: "text-gold font-semibold" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {t(n.key)}
@@ -66,38 +66,38 @@ export function Header() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
-            className="flex items-center gap-1.5 rounded-md border border-border px-3 py-2 text-sm font-medium hover:bg-secondary transition-colors"
+            className="flex items-center gap-1.5 rounded-md border border-white/25 px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-white/10 transition-colors"
             aria-label="Switch language"
           >
             <Globe className="h-4 w-4" />
             {lang === "en" ? "العربية" : "English"}
           </button>
           <Link to="/contact" className="hidden md:block">
-            <Button variant="default" className="bg-primary-gradient shadow-elegant">
+            <Button variant="default" className="bg-gold-gradient text-gold-foreground hover:opacity-90 shadow-gold">
               {t("nav.book")}
             </Button>
           </Link>
-          <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
+          <button className="lg:hidden p-2 text-primary-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X /> : <Menu />}
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-white/10 bg-primary/95 backdrop-blur-xl">
           <nav className="container mx-auto flex flex-col px-4 py-3">
             {NAV.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium border-b border-border/50 last:border-0"
+                className="py-3 text-base font-medium text-primary-foreground border-b border-white/10 last:border-0"
               >
                 {t(n.key)}
               </Link>
             ))}
             <Link to="/contact" onClick={() => setOpen(false)} className="mt-3">
-              <Button className="w-full bg-primary-gradient">{t("nav.book")}</Button>
+              <Button className="w-full bg-gold-gradient text-gold-foreground">{t("nav.book")}</Button>
             </Link>
           </nav>
         </div>
