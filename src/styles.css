@@ -56,7 +56,7 @@
   --radius: 0.75rem;
 
   /* Brand: #083B74 primary, #DDF4F9 light blue, #D4AF37 gold */
-  --background: oklch(1 0 0);
+  --background: oklch(0.96 0.03 220);
   --foreground: oklch(0.18 0.06 255);
 
   --card: oklch(1 0 0);
