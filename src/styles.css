@@ -56,7 +56,7 @@
   --radius: 0.75rem;
 
   /* Brand: #083B74 primary, #DDF4F9 light blue, #D4AF37 gold */
-  --background: oklch(1 0 0);
+  --background: oklch(0.96 0.03 220);
   --foreground: oklch(0.18 0.06 255);
 
   --card: oklch(1 0 0);
@@ -131,6 +131,9 @@
   }
   body {
     background-color: var(--color-background);
+    background-image: linear-gradient(180deg, #cfeefa 0%, #ddf4f9 50%, #eaf8fc 100%), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'><path d='M30 2l28 16v32l-28 16L2 50V18zM90 2l28 16v32l-28 16-28-16V18z' fill='none' stroke='%2338bdf8' stroke-opacity='0.25' stroke-width='1.2'/></svg>");
+    background-blend-mode: multiply;
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
