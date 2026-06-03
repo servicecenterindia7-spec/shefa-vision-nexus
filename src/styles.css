@@ -177,7 +177,7 @@
     box-shadow: var(--shadow-gold);
   }
   .hex-pattern {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'><path d='M15 1l14 8v16l-14 8L1 25V9zM45 1l14 8v16l-14 8-14-8V9z' fill='none' stroke='%23083B74' stroke-opacity='0.08' stroke-width='1'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'><path d='M15 1l14 8v16l-14 8L1 25V9zM45 1l14 8v16l-14 8-14-8V9z' fill='none' stroke='%235BAFA0' stroke-opacity='0.12' stroke-width='1'/></svg>");
   }
   .glass-card {
     background: color-mix(in oklab, var(--card) 70%, transparent);
