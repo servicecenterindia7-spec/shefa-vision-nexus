@@ -13,6 +13,7 @@ const NAV: Array<{ to: string; key: Parameters<ReturnType<typeof useLang>["t"]>[
   { to: "/departments", key: "nav.departments" },
   { to: "/doctors", key: "nav.doctors" },
   { to: "/emergency", key: "nav.emergency" },
+  { to: "/insurance", key: "nav.insurance" },
   { to: "/contact", key: "nav.contact" },
 ];
 

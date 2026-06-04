@@ -11,6 +11,7 @@ export const dict = {
   "nav.departments": { en: "Departments", ar: "الأقسام" },
   "nav.doctors": { en: "Doctors", ar: "الأطباء" },
   "nav.emergency": { en: "Emergency", ar: "الطوارئ" },
+  "nav.insurance": { en: "Insurance", ar: "التأمين" },
   "nav.contact": { en: "Contact", ar: "اتصل بنا" },
   "nav.book": { en: "Book Appointment", ar: "احجز موعد" },
 
