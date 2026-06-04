@@ -37,7 +37,7 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden ecg-strip">
         <div className="absolute inset-0">
           <img src={hero} alt="Shefa Hospital building" className="h-full w-full object-cover" width={1920} height={1080} />
           <div className="absolute inset-0 bg-hero-gradient" />
