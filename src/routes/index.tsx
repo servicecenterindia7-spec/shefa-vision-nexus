@@ -8,7 +8,8 @@ import {
   Scissors, FlaskConical, ScanLine, ClipboardCheck, Phone, MessageCircle, Star,
   ShieldCheck, Users, Award, Clock, Sparkles, ChevronRight, MapPin, Mail,
 } from "lucide-react";
-import hero from "@/assets/hero-hospital.jpg";
+import heroAsset from "@/assets/shefa-hospital-banner.png.asset.json";
+const hero = heroAsset.url;
 import interior from "@/assets/hospital-interior.jpg";
 import emergencyImg from "@/assets/emergency.jpg";
 
