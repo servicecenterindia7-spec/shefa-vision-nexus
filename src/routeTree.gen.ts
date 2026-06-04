@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as InsuranceRouteImport } from './routes/insurance'
 import { Route as EmergencyRouteImport } from './routes/emergency'
 import { Route as DoctorsRouteImport } from './routes/doctors'
 import { Route as DepartmentsRouteImport } from './routes/departments'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsuranceRoute = InsuranceRouteImport.update({
+  id: '/insurance',
+  path: '/insurance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmergencyRoute = EmergencyRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/departments': typeof DepartmentsRoute
   '/doctors': typeof DoctorsRoute
   '/emergency': typeof EmergencyRoute
+  '/insurance': typeof InsuranceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/departments': typeof DepartmentsRoute
   '/doctors': typeof DoctorsRoute
   '/emergency': typeof EmergencyRoute
+  '/insurance': typeof InsuranceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/departments': typeof DepartmentsRoute
   '/doctors': typeof DoctorsRoute
   '/emergency': typeof EmergencyRoute
+  '/insurance': typeof InsuranceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/departments'
     | '/doctors'
     | '/emergency'
+    | '/insurance'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/departments'
     | '/doctors'
     | '/emergency'
+    | '/insurance'
     | '/sitemap.xml'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/departments'
     | '/doctors'
     | '/emergency'
+    | '/insurance'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   DepartmentsRoute: typeof DepartmentsRoute
   DoctorsRoute: typeof DoctorsRoute
   EmergencyRoute: typeof EmergencyRoute
+  InsuranceRoute: typeof InsuranceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insurance': {
+      id: '/insurance'
+      path: '/insurance'
+      fullPath: '/insurance'
+      preLoaderRoute: typeof InsuranceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/emergency': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   DepartmentsRoute: DepartmentsRoute,
   DoctorsRoute: DoctorsRoute,
   EmergencyRoute: EmergencyRoute,
+  InsuranceRoute: InsuranceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

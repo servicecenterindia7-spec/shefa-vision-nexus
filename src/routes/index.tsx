@@ -41,32 +41,32 @@ function Index() {
       <section className="relative overflow-hidden ecg-strip">
         <div className="absolute inset-0">
           <img src={hero} alt="Shefa Hospital building" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-hero-gradient" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-primary/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-36 text-white">
           <div className="max-w-3xl animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 rounded-full bg-gold/20 backdrop-blur-md px-4 py-1.5 text-xs font-semibold text-gold ring-1 ring-gold/40">
+            <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-1.5 text-xs font-bold text-gold-foreground shadow-gold">
               <Award className="h-3.5 w-3.5" /> {t("hero.tag")}
             </span>
-            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1]">
+            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
               {t("hero.title")}
             </h1>
-            <p className="mt-6 text-lg md:text-xl opacity-90 max-w-2xl">{t("hero.sub")}</p>
+            <p className="mt-6 text-lg md:text-xl text-white max-w-2xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">{t("hero.sub")}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact">
-                <Button size="lg" className="bg-gold-gradient text-gold-foreground hover:opacity-90 shadow-gold">
+                <Button size="lg" className="bg-gold-gradient text-gold-foreground hover:opacity-95 shadow-gold font-bold">
                   {t("hero.book")} <ChevronRight className="ms-1 h-4 w-4" />
                 </Button>
               </Link>
               <a href={telHref}>
-                <Button size="lg" variant="outline" className="border-white/30 bg-white/10 text-white backdrop-blur-md hover:bg-white/20">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/95 shadow-elegant font-bold">
                   <Phone className="me-2 h-4 w-4" /> {t("hero.call")}
                 </Button>
               </a>
               <a href={waHref} target="_blank" rel="noopener">
-                <Button size="lg" variant="outline" className="border-white/30 bg-white/10 text-white backdrop-blur-md hover:bg-white/20">
+                <Button size="lg" className="bg-whatsapp text-white hover:opacity-95 shadow-elegant font-bold">
                   <MessageCircle className="me-2 h-4 w-4" /> WhatsApp
                 </Button>
               </a>
@@ -79,9 +79,9 @@ function Index() {
                 { label: t("hero.badge.amb"), icon: Ambulance },
                 { label: t("hero.badge.spec"), icon: Stethoscope },
               ].map((b) => (
-                <div key={b.label} className="glass-card rounded-xl px-3 py-2.5 flex items-center gap-2 text-sm">
+                <div key={b.label} className="rounded-xl bg-white text-primary px-3 py-2.5 flex items-center gap-2 text-sm font-semibold shadow-card-elegant">
                   <b.icon className="h-4 w-4 text-gold" />
-                  <span className="text-white/95">{b.label}</span>
+                  <span>{b.label}</span>
                 </div>
               ))}
             </div>
