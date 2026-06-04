@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logoAsset from "@/assets/shefa-logo.png.asset.json";
+import cbahiAsset from "@/assets/cbahi-logo.png.asset.json";
+const logo = logoAsset.url;
+const cbahi = cbahiAsset.url;
 import { HOSPITAL, telHref } from "@/lib/hospital-data";
 import { useLang } from "@/lib/i18n";
 
@@ -12,15 +15,18 @@ export function Footer() {
         <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Shefa" className="h-12 w-12 bg-white rounded-lg p-1" width={48} height={48} />
+              <img src={logo} alt="Shefa" className="h-12 w-12 bg-white rounded-lg p-1 object-contain" width={48} height={48} />
               <div>
                 <div className="font-display font-bold text-lg">Shefa Hospital</div>
                 <div className="text-xs opacity-80" dir="rtl">مستشفى الشفاء</div>
               </div>
             </div>
             <p className="text-sm opacity-80">{t("f.tag")}</p>
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-gold/20 text-gold px-3 py-1 text-xs font-semibold">
-              CBAHI Accredited
+            <div className="mt-5 inline-flex items-center gap-3 rounded-xl bg-white/95 p-2 pr-3">
+              <img src={cbahi} alt="CBAHI Accredited" className="h-12 w-12 object-contain" width={48} height={48} />
+              <div className="text-[10px] leading-tight text-primary font-semibold">
+                CBAHI<br /><span className="opacity-70 font-normal">Accredited</span>
+              </div>
             </div>
           </div>
 

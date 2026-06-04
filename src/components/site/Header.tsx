@@ -3,7 +3,8 @@ import { Menu, X, Globe, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { HOSPITAL, telHref } from "@/lib/hospital-data";
-import logo from "@/assets/logo.png";
+import logoAsset from "@/assets/shefa-logo.png.asset.json";
+const logo = logoAsset.url;
 import { Button } from "@/components/ui/button";
 
 const NAV: Array<{ to: string; key: Parameters<ReturnType<typeof useLang>["t"]>[0] }> = [
