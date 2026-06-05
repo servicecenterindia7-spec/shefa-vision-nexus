@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Shefa Hospital — Trusted Healthcare in Makkah | CBAHI Accredited" },
-      { name: "description", content: "Premium multispecialty hospital in Al Mansur, Makkah. 24/7 emergency, ICU, expert specialists, lab and radiology. CBAHI accredited." },
+      { name: "description", content: "Premium multispecialty hospital in Shara Mansur, Makkah. 24/7 emergency, ICU, expert specialists, lab and radiology. CBAHI accredited." },
       { property: "og:title", content: "Shefa Hospital — Trusted Healthcare in Makkah" },
       { property: "og:description", content: "24/7 emergency care, expert specialists, modern facilities — Shefa Hospital in Makkah." },
       { property: "og:url", content: "/" },

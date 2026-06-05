@@ -115,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           telephone: "+966125333555",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Al Mansur",
+            streetAddress: "Shara Mansur",
             addressLocality: "Makkah",
             postalCode: "24232",
             addressCountry: "SA",

@@ -4,11 +4,11 @@ export const HOSPITAL = {
   phone: "+966125333555",
   phoneDisplay: "+966 012 533 3555",
   whatsapp: "966125333555",
-  addressEn: "Al Mansur, Makkah 24232, Saudi Arabia",
-  addressAr: "المنصور، مكة المكرمة 24232، المملكة العربية السعودية",
+  addressEn: "Shara Mansur, Makkah 24232, Saudi Arabia",
+  addressAr: "شارع المنصور، مكة المكرمة 24232، المملكة العربية السعودية",
   reviews: 761,
   mapsEmbed:
-    "https://www.google.com/maps?q=Al+Mansur+Makkah+24232+Saudi+Arabia&output=embed",
+    "https://www.google.com/maps?q=Shara+Mansur+Makkah+24232+Saudi+Arabia&output=embed",
 };
 
 export const telHref = `tel:${HOSPITAL.phone}`;
