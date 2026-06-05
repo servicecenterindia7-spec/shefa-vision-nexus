@@ -41,15 +41,21 @@ function DeptPage() {
           {DEPARTMENTS.map((d) => {
             const Icon = ICONS[d.icon] ?? Stethoscope;
             return (
-              <div key={d.id} className="group bg-card rounded-2xl p-7 shadow-card-elegant hover:shadow-elegant hover:-translate-y-1 transition-all border border-border/50">
-                <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary-gradient group-hover:text-primary-foreground transition-colors">
-                  <Icon className="h-7 w-7" />
+              <div key={d.id} className="group bg-card rounded-2xl overflow-hidden shadow-card-elegant hover:shadow-elegant hover:-translate-y-1 transition-all border border-border/50 flex flex-col">
+                <div className="relative h-44 overflow-hidden">
+                  <img src={d.image} alt={lang === "ar" ? d.nameAr : d.nameEn} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
+                  <div className="absolute bottom-3 left-3 h-12 w-12 rounded-xl bg-white/95 text-primary flex items-center justify-center shadow-card-elegant">
+                    <Icon className="h-6 w-6" />
+                  </div>
                 </div>
-                <h3 className="mt-5 font-bold text-xl text-foreground">{lang === "ar" ? d.nameAr : d.nameEn}</h3>
-                <p className="mt-2 text-muted-foreground">{lang === "ar" ? d.descAr : d.descEn}</p>
-                <Link to="/contact" className="mt-5 inline-block">
-                  <Button variant="outline" className="border-primary/30">{lang === "ar" ? "احجز موعد" : "Book Appointment"} <ChevronRight className="ms-1 h-4 w-4" /></Button>
-                </Link>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="font-bold text-xl text-foreground">{lang === "ar" ? d.nameAr : d.nameEn}</h3>
+                  <p className="mt-2 text-muted-foreground flex-1">{lang === "ar" ? d.descAr : d.descEn}</p>
+                  <Link to="/contact" className="mt-5 inline-block">
+                    <Button variant="outline" className="border-primary/30">{lang === "ar" ? "احجز موعد" : "Book Appointment"} <ChevronRight className="ms-1 h-4 w-4" /></Button>
+                  </Link>
+                </div>
               </div>
             );
           })}

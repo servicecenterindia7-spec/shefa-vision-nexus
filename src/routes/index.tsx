@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Shefa Hospital — Trusted Healthcare in Makkah | CBAHI Accredited" },
-      { name: "description", content: "Premium multispecialty hospital in Al Mansur, Makkah. 24/7 emergency, ICU, expert specialists, lab and radiology. CBAHI accredited." },
+      { name: "description", content: "Premium multispecialty hospital in Shara Mansur, Makkah. 24/7 emergency, ICU, expert specialists, lab and radiology. CBAHI accredited." },
       { property: "og:title", content: "Shefa Hospital — Trusted Healthcare in Makkah" },
       { property: "og:description", content: "24/7 emergency care, expert specialists, modern facilities — Shefa Hospital in Makkah." },
       { property: "og:url", content: "/" },
@@ -143,15 +143,21 @@ function Index() {
             {DEPARTMENTS.map((d) => {
               const Icon = ICONS[d.icon] ?? Stethoscope;
               return (
-                <div key={d.id} className="group bg-card rounded-2xl p-6 shadow-card-elegant hover:shadow-elegant hover:-translate-y-1 transition-all border border-border/50">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Icon className="h-6 w-6" />
+                <div key={d.id} className="group bg-card rounded-2xl overflow-hidden shadow-card-elegant hover:shadow-elegant hover:-translate-y-1 transition-all border border-border/50 flex flex-col">
+                  <div className="relative h-36 overflow-hidden">
+                    <img src={d.image} alt={lang === "ar" ? d.nameAr : d.nameEn} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/15 to-transparent" />
+                    <div className="absolute bottom-2 left-2 h-10 w-10 rounded-lg bg-white/95 text-primary flex items-center justify-center shadow-card-elegant">
+                      <Icon className="h-5 w-5" />
+                    </div>
                   </div>
-                  <h3 className="mt-4 font-bold text-lg text-foreground">{lang === "ar" ? d.nameAr : d.nameEn}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{lang === "ar" ? d.descAr : d.descEn}</p>
-                  <Link to="/departments" className="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:text-gold">
-                    {t("dep.learn")} <ChevronRight className="ms-1 h-4 w-4" />
-                  </Link>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="font-bold text-lg text-foreground">{lang === "ar" ? d.nameAr : d.nameEn}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground flex-1">{lang === "ar" ? d.descAr : d.descEn}</p>
+                    <Link to="/departments" className="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:text-gold">
+                      {t("dep.learn")} <ChevronRight className="ms-1 h-4 w-4" />
+                    </Link>
+                  </div>
                 </div>
               );
             })}

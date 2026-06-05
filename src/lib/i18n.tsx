@@ -102,7 +102,7 @@ export const dict = {
   // contact
   "c.kicker": { en: "Get in Touch", ar: "تواصل معنا" },
   "c.title": { en: "We're here for you", ar: "نحن هنا من أجلك" },
-  "c.address": { en: "Al Mansur, Makkah 24232, Saudi Arabia", ar: "المنصور، مكة المكرمة 24232، المملكة العربية السعودية" },
+  "c.address": { en: "Shara Mansur, Makkah 24232, Saudi Arabia", ar: "شارع المنصور، مكة المكرمة 24232، المملكة العربية السعودية" },
   "c.phone": { en: "Phone", ar: "الهاتف" },
   "c.hours": { en: "Working Hours", ar: "ساعات العمل" },
   "c.hoursVal": { en: "Open 24 hours — Emergency always available", ar: "مفتوح 24 ساعة — الطوارئ متاحة دائماً" },

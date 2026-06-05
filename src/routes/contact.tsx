@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact & Book Appointment — Shefa Hospital Makkah" },
-      { name: "description", content: "Book an appointment or contact Shefa Hospital in Al Mansur, Makkah. Call, WhatsApp, or use our online form." },
+      { name: "description", content: "Book an appointment or contact Shefa Hospital in Shara Mansur, Makkah. Call, WhatsApp, or use our online form." },
       { property: "og:title", content: "Contact Shefa Hospital" },
       { property: "og:url", content: "/contact" },
     ],
