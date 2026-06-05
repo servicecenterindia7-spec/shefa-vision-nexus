@@ -16,6 +16,21 @@ export const waHref = `https://wa.me/${HOSPITAL.whatsapp}?text=${encodeURICompon
   "Hello Shefa Hospital, I would like to book an appointment.",
 )}`;
 
+import deptEmergency from "@/assets/dept-emergency.jpg";
+import deptIcu from "@/assets/dept-icu.jpg";
+import deptObgyn from "@/assets/dept-obgyn.jpg";
+import deptCardiology from "@/assets/dept-cardiology.jpg";
+import deptUrology from "@/assets/dept-urology.jpg";
+import deptDental from "@/assets/dept-dental.jpg";
+import deptInternal from "@/assets/dept-internal.jpg";
+import deptEnt from "@/assets/dept-ent.jpg";
+import deptOrtho from "@/assets/dept-ortho.jpg";
+import deptSurgery from "@/assets/dept-surgery.jpg";
+import deptPediatrics from "@/assets/dept-pediatrics.jpg";
+import deptLab from "@/assets/dept-lab.jpg";
+import deptRadiology from "@/assets/dept-radiology.jpg";
+import deptScreening from "@/assets/dept-screening.jpg";
+
 export type Department = {
   id: string;
   icon: string;
@@ -26,23 +41,21 @@ export type Department = {
   image: string;
 };
 
-const img = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=70`;
-
 export const DEPARTMENTS: Department[] = [
-  { id: "emergency", icon: "Ambulance", nameEn: "Emergency Department", nameAr: "قسم الطوارئ", descEn: "Rapid response trauma and critical care, 24/7.", descAr: "استجابة سريعة للحالات الحرجة على مدار الساعة.", image: img("photo-1587351021759-3e566b6af7cc") },
-  { id: "icu", icon: "Activity", nameEn: "Intensive Care Unit", nameAr: "العناية المركزة", descEn: "Advanced monitoring and life-saving interventions.", descAr: "مراقبة متقدمة وتدخلات لإنقاذ الحياة.", image: img("photo-1631815588090-d4bfec5b1ccb") },
-  { id: "obgyn", icon: "Baby", nameEn: "Obstetrics & Gynecology", nameAr: "النساء والولادة", descEn: "Compassionate maternal and women's health.", descAr: "رعاية رحيمة لصحة المرأة والأمومة.", image: img("photo-1519494026892-80bbd2d6fd0d") },
-  { id: "cardiology", icon: "HeartPulse", nameEn: "Cardiology", nameAr: "أمراض القلب", descEn: "Heart diagnostics, interventions and prevention.", descAr: "تشخيص القلب والتدخلات والوقاية.", image: img("photo-1628348068343-c6a848d2b6dd") },
-  { id: "urology", icon: "Droplets", nameEn: "Urology", nameAr: "المسالك البولية", descEn: "Comprehensive urinary and reproductive care.", descAr: "رعاية شاملة للمسالك والتناسلية.", image: img("photo-1530026405186-ed1f139313f8") },
-  { id: "dental", icon: "Smile", nameEn: "Dental Clinic", nameAr: "عيادة الأسنان", descEn: "Modern dentistry from prevention to cosmetics.", descAr: "طب أسنان حديث من الوقاية إلى التجميل.", image: img("photo-1606811971618-4486d14f3f99") },
-  { id: "internal", icon: "Stethoscope", nameEn: "Internal Medicine", nameAr: "الباطنة", descEn: "Adult diagnosis and chronic disease management.", descAr: "تشخيص البالغين وإدارة الأمراض المزمنة.", image: img("photo-1666214280557-f1b5022eb634") },
-  { id: "ent", icon: "Ear", nameEn: "ENT", nameAr: "الأنف والأذن والحنجرة", descEn: "Ear, nose, throat and sleep disorders.", descAr: "علاج الأذن والأنف والحنجرة واضطرابات النوم.", image: img("photo-1588776814546-1ffcf47267a5") },
-  { id: "ortho", icon: "Bone", nameEn: "Orthopedics", nameAr: "العظام", descEn: "Joint, spine and sports injury specialists.", descAr: "متخصصون في المفاصل والعمود الفقري وإصابات الرياضة.", image: img("photo-1530497610245-94d3c16cda28") },
-  { id: "surgery", icon: "Scissors", nameEn: "General Surgery", nameAr: "الجراحة العامة", descEn: "Minimally invasive and complex procedures.", descAr: "إجراءات بالحد الأدنى من التدخل وأخرى معقدة.", image: img("photo-1551601651-2a8555f1a136") },
-  { id: "pediatrics", icon: "Baby", nameEn: "Pediatrics", nameAr: "طب الأطفال", descEn: "Child-friendly care from newborn to teen.", descAr: "رعاية ودودة من الولادة إلى المراهقة.", image: img("photo-1632053002430-91d7ee19a4f1") },
-  { id: "lab", icon: "FlaskConical", nameEn: "Laboratory", nameAr: "المختبر", descEn: "Accurate diagnostics with fast turnaround.", descAr: "تشخيص دقيق ونتائج سريعة.", image: img("photo-1582719471384-894fbb16e074") },
-  { id: "rad", icon: "ScanLine", nameEn: "Radiology Center", nameAr: "مركز الأشعة", descEn: "MRI, CT, ultrasound and digital X-ray.", descAr: "رنين مغناطيسي، أشعة مقطعية، موجات وأشعة رقمية.", image: img("photo-1516069677018-378515003435") },
-  { id: "screening", icon: "ClipboardCheck", nameEn: "Pre-Employment Screening", nameAr: "الفحص الطبي للتوظيف", descEn: "Certified medical screening for employers.", descAr: "فحوصات طبية معتمدة لأصحاب العمل.", image: img("photo-1576091160550-2173dba999ef") },
+  { id: "emergency", icon: "Ambulance", nameEn: "Emergency Department", nameAr: "قسم الطوارئ", descEn: "Rapid response trauma and critical care, 24/7.", descAr: "استجابة سريعة للحالات الحرجة على مدار الساعة.", image: deptEmergency },
+  { id: "icu", icon: "Activity", nameEn: "Intensive Care Unit", nameAr: "العناية المركزة", descEn: "Advanced monitoring and life-saving interventions.", descAr: "مراقبة متقدمة وتدخلات لإنقاذ الحياة.", image: deptIcu },
+  { id: "obgyn", icon: "Baby", nameEn: "Obstetrics & Gynecology", nameAr: "النساء والولادة", descEn: "Compassionate maternal and women's health.", descAr: "رعاية رحيمة لصحة المرأة والأمومة.", image: deptObgyn },
+  { id: "cardiology", icon: "HeartPulse", nameEn: "Cardiology", nameAr: "أمراض القلب", descEn: "Heart diagnostics, interventions and prevention.", descAr: "تشخيص القلب والتدخلات والوقاية.", image: deptCardiology },
+  { id: "urology", icon: "Droplets", nameEn: "Urology", nameAr: "المسالك البولية", descEn: "Comprehensive urinary and reproductive care.", descAr: "رعاية شاملة للمسالك والتناسلية.", image: deptUrology },
+  { id: "dental", icon: "Smile", nameEn: "Dental Clinic", nameAr: "عيادة الأسنان", descEn: "Modern dentistry from prevention to cosmetics.", descAr: "طب أسنان حديث من الوقاية إلى التجميل.", image: deptDental },
+  { id: "internal", icon: "Stethoscope", nameEn: "Internal Medicine", nameAr: "الباطنة", descEn: "Adult diagnosis and chronic disease management.", descAr: "تشخيص البالغين وإدارة الأمراض المزمنة.", image: deptInternal },
+  { id: "ent", icon: "Ear", nameEn: "ENT", nameAr: "الأنف والأذن والحنجرة", descEn: "Ear, nose, throat and sleep disorders.", descAr: "علاج الأذن والأنف والحنجرة واضطرابات النوم.", image: deptEnt },
+  { id: "ortho", icon: "Bone", nameEn: "Orthopedics", nameAr: "العظام", descEn: "Joint, spine and sports injury specialists.", descAr: "متخصصون في المفاصل والعمود الفقري وإصابات الرياضة.", image: deptOrtho },
+  { id: "surgery", icon: "Scissors", nameEn: "General Surgery", nameAr: "الجراحة العامة", descEn: "Minimally invasive and complex procedures.", descAr: "إجراءات بالحد الأدنى من التدخل وأخرى معقدة.", image: deptSurgery },
+  { id: "pediatrics", icon: "Baby", nameEn: "Pediatrics", nameAr: "طب الأطفال", descEn: "Child-friendly care from newborn to teen.", descAr: "رعاية ودودة من الولادة إلى المراهقة.", image: deptPediatrics },
+  { id: "lab", icon: "FlaskConical", nameEn: "Laboratory", nameAr: "المختبر", descEn: "Accurate diagnostics with fast turnaround.", descAr: "تشخيص دقيق ونتائج سريعة.", image: deptLab },
+  { id: "rad", icon: "ScanLine", nameEn: "Radiology Center", nameAr: "مركز الأشعة", descEn: "MRI, CT, ultrasound and digital X-ray.", descAr: "رنين مغناطيسي، أشعة مقطعية، موجات وأشعة رقمية.", image: deptRadiology },
+  { id: "screening", icon: "ClipboardCheck", nameEn: "Pre-Employment Screening", nameAr: "الفحص الطبي للتوظيف", descEn: "Certified medical screening for employers.", descAr: "فحوصات طبية معتمدة لأصحاب العمل.", image: deptScreening },
 ];
 
 import d1 from "@/assets/doctor-1.jpg";
